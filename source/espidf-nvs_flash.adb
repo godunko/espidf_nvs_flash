@@ -4,9 +4,29 @@
 --  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 --
 
+with System;
+
 with ESPIDF.Ada_ESP_Check_Error;
 
 package body ESPIDF.NVS_Flash is
+
+   ------------------
+   -- nvs_find_key --
+   ------------------
+
+   function nvs_find_key
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string) return esp_err_t
+   is
+      function Imported
+        (handle   : nvs_handle_t;
+         key      : ESPIDF.C_Strings.char_array_string;
+         out_type : System.Address) return esp_err_t
+        with Import, Convention => C, External_Name => "nvs_find_key";
+
+   begin
+      return Imported (handle, key, System.Null_Address);
+   end nvs_find_key;
 
    --------------------
    -- nvs_flash_init --
