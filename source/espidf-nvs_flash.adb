@@ -24,6 +24,15 @@ package body ESPIDF.NVS_Flash is
       handle := 0;
    end nvs_close;
 
+   ----------------
+   -- nvs_commit --
+   ----------------
+
+   procedure nvs_commit (handle : nvs_handle_t) is
+   begin
+      Ada_ESP_Check_Error (nvs_commit (handle));
+   end nvs_commit;
+
    ------------------
    -- nvs_find_key --
    ------------------
