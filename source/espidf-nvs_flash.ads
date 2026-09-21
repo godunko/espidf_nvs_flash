@@ -55,6 +55,8 @@ package ESPIDF.NVS_Flash is
       open_mode      : nvs_open_mode_t;
       out_handle     : out nvs_handle_t);
 
+   procedure nvs_close (handle : in out nvs_handle_t);
+
    function nvs_find_key
      (handle   : nvs_handle_t;
       key      : ESPIDF.C_Strings.char_array_string;

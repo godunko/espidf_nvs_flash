@@ -10,6 +10,20 @@ with ESPIDF.Ada_ESP_Check_Error;
 
 package body ESPIDF.NVS_Flash is
 
+   ---------------
+   -- nvs_close --
+   ---------------
+
+   procedure nvs_close (handle : in out nvs_handle_t) is
+      procedure Imported
+        (handle : nvs_handle_t)
+        with Import, Convention => C, External_Name => "nvs_close";
+
+   begin
+      Imported (handle);
+      handle := 0;
+   end nvs_close;
+
    ------------------
    -- nvs_find_key --
    ------------------
