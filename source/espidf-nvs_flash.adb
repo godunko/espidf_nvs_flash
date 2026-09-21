@@ -63,4 +63,16 @@ package body ESPIDF.NVS_Flash is
       Ada_ESP_Check_Error (nvs_open (namespace_name, open_mode, out_handle));
    end nvs_open;
 
+   -----------------
+   -- nvs_set_str --
+   -----------------
+
+   procedure nvs_set_str
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string;
+      value  : ESPIDF.C_Strings.char_array_string) is
+   begin
+      Ada_ESP_Check_Error (nvs_set_str (handle, key, value));
+   end nvs_set_str;
+
 end ESPIDF.NVS_Flash;

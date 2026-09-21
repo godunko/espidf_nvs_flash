@@ -67,6 +67,17 @@ package ESPIDF.NVS_Flash is
      (handle : nvs_handle_t;
       key    : ESPIDF.C_Strings.char_array_string) return esp_err_t;
 
+   function nvs_set_str
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string;
+      value  : ESPIDF.C_Strings.char_array_string) return esp_err_t
+     with Import, Convention => C, External_Name => "nvs_set_str";
+
+   procedure nvs_set_str
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string;
+      value  : ESPIDF.C_Strings.char_array_string);
+
 private
 
    type nvs_handle_t is new uint32_t;
