@@ -73,6 +73,39 @@ package ESPIDF.NVS_Flash is
      (handle : nvs_handle_t;
       key    : ESPIDF.C_Strings.char_array_string) return esp_err_t;
 
+   function nvs_get_str_length
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string;
+      length : out size_t) return esp_err_t;
+   --  `length` is in bytes, and includes null terminator.
+
+   procedure nvs_get_str_length
+     (handle : nvs_handle_t;
+      key    : ESPIDF.C_Strings.char_array_string;
+      length : out size_t);
+
+   function nvs_get_str
+     (handle    : nvs_handle_t;
+      key       : ESPIDF.C_Strings.char_array_string;
+      out_value : out ESPIDF.C_Strings.char_array;
+      length    : out size_t) return esp_err_t;
+
+   procedure nvs_get_str
+     (handle    : nvs_handle_t;
+      key       : ESPIDF.C_Strings.char_array_string;
+      out_value : out ESPIDF.C_Strings.char_array;
+      length    : out size_t);
+
+   function nvs_get_str
+     (handle    : nvs_handle_t;
+      key       : ESPIDF.C_Strings.char_array_string;
+      out_value : out ESPIDF.C_Strings.char_array) return esp_err_t;
+
+   procedure nvs_get_str
+     (handle    : nvs_handle_t;
+      key       : ESPIDF.C_Strings.char_array_string;
+      out_value : out ESPIDF.C_Strings.char_array);
+
    function nvs_set_str
      (handle : nvs_handle_t;
       key    : ESPIDF.C_Strings.char_array_string;
