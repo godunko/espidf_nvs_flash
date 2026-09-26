@@ -1,9 +1,12 @@
 name = "espidf_nvs_flash"
 version = "0.1.0-dev"
 website = "https://github.com/godunko/espidf_nvs_flash"
-description = "Ada/ESP-IDF: NVS Flash bindings"
+description = "Ada/ESP-IDF: Non-Volatile Storage (NVS) bindings"
 long-description = """
-Ada bindings for the ESP-IDF Non-Volatile Storage (NVS) Flash driver, enabling persistent key-value data storage on Espressif microcontrollers.
+Ada bindings for the ESP-IDF Non-Volatile Storage library (`nvs_flash`).
+
+Covers initialization of the NVS partition, opening/closing namespaces, key lookup,
+reading and writing string values, and committing changes.
 """
 
 authors = ["Vadim Godunko"]
