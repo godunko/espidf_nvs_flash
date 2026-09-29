@@ -1,5 +1,5 @@
 name = "espidf_nvs_flash"
-version = "0.1.0-dev"
+version = "0.2.0-dev"
 website = "https://github.com/godunko/espidf_nvs_flash"
 description = "Ada/ESP-IDF: Non-Volatile Storage (NVS) bindings"
 long-description = """
